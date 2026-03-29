@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Navbar</title>
   <link rel="stylesheet" href="nav.css">
 </head>
 <body>
 
-<div class="sidebar">
-  <a href="public\icons\hamburger.png"></a>
-  <a href="public\logo\Circle.png" class="logo">
-    <a href="public\logo\Logo 2.png" class="circle"></a>
-    <h2>C TUBE</h2>
-  </a>
-  <div class="navbar">
-    <input type="text" placeholder="Type something...">
+<nav class="navbar">
+  
 
-    <div class="nav-icons">
-      <a href="public\icons\search.png"></a>
-      <a href="public\icons\microphone-black-shape.png>"></a>
-    </div>
+  <div class="left">
+    <div class="menu"></div>
 
-    <div class="profile">
-      <a href="public\icons\video-camera.png"></a>
-      <a href="public\icons\bell.png"></a>
-       <span>User Profile</span>
+    <div class="logo">
+      <a href="public\icons\hamburger.png"><img src="public\icons\hamburger.png" alt="Hamburger icon"></a>
+      <div class="circle"><a href="public\logo\Circle.png"></a></div>
+      <span class="text">C TUBE</span>
     </div>
   </div>
+
+  
+  <div class="search-box">
+    <input type="text" placeholder="Type something ...">
+    <button class="search-btn"><a><img src="public\icons\search.png" alt="Search icon"></a></button>
+    <button class="mic-btn"><a><img src="public\icons\microphone-black-shape.png" alt="Microphone icon"></a></button>
   </div>
-</div>
+
+  
+  <div class="right">
+    <div class="icon"><a><img src="public\icons\video-camera.png" alt="Video camera icon"></a></div>
+    <div class="icon"><a><img src="public\icons\bell.png" alt="Bell icon"></a></div>
+    <div class="profile">User<br>Profile</div>
+  </div>
+
+</nav>
 
 </body>
 </html>
-
