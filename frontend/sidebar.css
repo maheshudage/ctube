@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  background: #121212;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  padding: 15px;
+}
+
+/* 🔥 Individual white cards */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #ffffff;       /* WHITE BACKGROUND */
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* Icon fix */
+.icon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  width: 18px;   /* slightly smaller for better match */
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Hover */
+.menu-item:hover {
+  background: #f0f0f0;
+}
+
+/* Subscriptions container (NO white bg now) */
+.subscriptions {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* 🔥 White background ONLY for heading */
+.subscriptions h4 {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* Channel items (NO background) */
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white; /* since bg is dark */
+}
+
+.channel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Circle avatar */
+.circle {
+  width: 25px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+/* 🔥 White background ONLY for Show More */
+.show-more {
+  background: #ffffff;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+img[alt="Watch later"] {
+  width: 18px;
+  height: 18px;
+}
+.text {
+  font-size: 14px;
+}
