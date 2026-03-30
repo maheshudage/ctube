@@ -16,7 +16,7 @@ function ForgotPassword() {
           className="w-full p-3 mb-4 rounded-lg bg-gray-800 text-white"
         />
 
-        <button className="w-full py-2 bg-blue-500 text-white rounded-lg">
+        <button className="w-full py-2 bg-[#9e024b] text-white rounded-lg">
           Send Reset Link
         </button>
 

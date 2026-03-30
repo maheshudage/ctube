@@ -30,9 +30,13 @@ function Signup() {
             className="w-full p-3 mb-4 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
 
-          <button className="w-full py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition">
+          {/* <button className="w-full py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition">
             Sign Up
-          </button>
+          </button> */}
+
+          <button className="w-full py-2 bg-[#9e024b] text-white rounded-lg font-semibold hover:bg-[#7c013a] transition">
+  Sign Up
+</button>
 
         </form>
 
