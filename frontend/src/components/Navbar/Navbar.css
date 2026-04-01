@@ -125,3 +125,52 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  /*---------------------------------------------*/
+
+.profile-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* PROFILE CIRCLE
+.profile-circle {
+  width: 90px;
+  height: 90px;
+  background: #eee;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  right: 20px;
+} */
+
+/* CARD */
+.card {
+  width: 380px;
+  background: black;
+  padding: 5px;
+  border-radius: 30px;
+  margin-top: 50px;
+}
+
+/* ITEMS */
+.item {
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+  color: black;
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  gap: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ✅ FIXED ICON CLASS */
+.item-icon {
+  width: 20px;
+  height: 20px;
+}

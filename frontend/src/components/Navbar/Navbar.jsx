@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
+  const [showProfile, setShowProfile] = useState(false);
+
   return (
     <nav className="navbar">
 
@@ -41,10 +44,41 @@ function Navbar() {
           <img src="/icons/bell.png" alt="bell" />
         </div>
 
-        <div className="profile">
+        <div 
+          className="profile"
+          onClick={() => setShowProfile(!showProfile)}
+        >
           User<br />Profile
         </div>
       </div>
+
+      {/* ✅ DROPDOWN */}
+      {showProfile && (
+        <div className="profile-dropdown">
+
+          {/* <div className="profile-circle"></div> */}
+
+          <div className="card">
+
+            <div className="item">
+              <img src="../icons/user.png" alt="User" className="item-icon" />
+              <span>View Channel</span>
+            </div>
+
+            <div className="item">
+              <img src="../icons/edit.png" alt="edit" className="item-icon" />
+              <span>Customize Profile</span>
+            </div>
+
+            <div className="item">
+              <img src="../icons/logout.png" alt="logout" className="item-icon" />
+              <span>Sign Out</span>
+            </div>
+
+          </div>
+
+        </div>
+      )}
 
     </nav>
   );
