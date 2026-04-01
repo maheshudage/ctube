@@ -4,12 +4,12 @@ const Channel = () => {
   return (
     <div style={styles.container}>
 
-      {/* ✅ BANNER */}
+      
       <div style={styles.bannerWrapper}>
         <img src="/banner.jpg" alt="banner" style={styles.banner} />
       </div>
 
-      {/* ✅ HEADER */}
+      
       <div style={styles.header}>
         <img src="/spiderman.png" alt="profile" style={styles.profile} />
 
@@ -20,7 +20,7 @@ const Channel = () => {
         </div>
       </div>
 
-      {/* ✅ VIDEOS */}
+      
       <div style={styles.grid}>
         {[1,2,3,4,5,6].map((item) => (
           <div key={item}>
@@ -43,7 +43,7 @@ const styles = {
     color: "white",
   },
 
-  /* 🔥 FIXED BANNER */
+  
   bannerWrapper: {
     width: "100%",
     height: "220px",
@@ -57,12 +57,11 @@ const styles = {
     objectFit: "cover",
   },
 
-  /* 🔥 CLEAN HEADER ALIGNMENT */
   header: {
     display: "flex",
     alignItems: "center",
     gap: "20px",
-    marginTop: "-60px",   // 🔥 overlap effect
+    marginTop: "-60px",  
     paddingLeft: "20px",
   },
 
@@ -97,7 +96,6 @@ const styles = {
     cursor: "pointer",
   },
 
-  /* 🔥 VIDEO GRID */
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",

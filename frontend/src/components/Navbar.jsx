@@ -1,35 +1,34 @@
 import React from "react";
-import logo from "../assets/logo2.png"; // ✅ fixed
-
+import logo from "../assets/logo2.png"; 
 const Navbar = () => {
   return (
     <div style={styles.navbar}>
 
-      {/* LEFT */}
+      
       <div style={styles.left}>
         <div style={styles.menu}>☰</div>
 
-        {/* ✅ LOGO */}
+        
         <img src={logo} alt="logo" style={styles.logo} />
       </div>
 
-      {/* CENTER */}
+      
       <div style={styles.center}>
         <div style={styles.searchBox}>
           <input
             placeholder="Type something ..."
             style={styles.input}
           />
-          <div style={styles.searchBtn}>🔍</div>
-          <div style={styles.searchBtn}>🎤</div>
+          <div style={styles.searchBtn}></div>
+          <div style={styles.searchBtn}></div>
         </div>
       </div>
 
-      {/* RIGHT */}
+      
       <div style={styles.right}>
-        <div style={styles.icon}>👥</div>
-        <div style={styles.icon}>🎥</div>
-        <div style={styles.icon}>🔔</div>
+        <div style={styles.icon}></div>
+        <div style={styles.icon}></div>
+        <div style={styles.icon}></div>
 
         <div style={styles.profile}>
           User <br /> Profile
@@ -65,9 +64,9 @@ const styles = {
   },
 
   logo: {
-  height: "55px",   // 🔥 increased from 40 → 55
+  height: "55px",  
   objectFit: "contain",
-  },
+},
 
   center: {
     flex: 1,

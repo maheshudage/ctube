@@ -4,11 +4,11 @@ const Sidebar = () => {
   return (
     <div style={styles.sidebar}>
 
-      <div style={styles.item}>🏠 Home</div>
-      <div style={styles.item}>📺 Subscriptions</div>
-      <div style={styles.item}>🕘 History</div>
-      <div style={styles.item}>⏱ Watch later</div>
-      <div style={styles.item}>👍 Liked videos</div>
+      <div style={styles.item}> Home</div>
+      <div style={styles.item}> Subscriptions</div>
+      <div style={styles.item}> History</div>
+      <div style={styles.item}> Watch later</div>
+      <div style={styles.item}> Liked videos</div>
 
       
 
@@ -21,12 +21,12 @@ const styles = {
   width: "240px",
   background: "#0b0b0b",
   color: "white",
-  height: "100vh",   // ✅ full height
+  height: "100vh",   
   position: "fixed",
-  top: "60px",       // below navbar
+  top: "60px",      
   left: 0,
   padding: "10px",
-  overflow: "hidden", // ❌ remove scroll
+  overflow: "hidden", 
   },
 
   item: {

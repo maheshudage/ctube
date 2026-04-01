@@ -8,7 +8,7 @@ const App = () => {
     <div style={{ background: "#000", minHeight: "100vh" }}>
       <Navbar />
       <Sidebar />
-      <Channel />   {/* ✅ THIS MUST BE HERE */}
+      <Channel />  
     </div>
   );
 };

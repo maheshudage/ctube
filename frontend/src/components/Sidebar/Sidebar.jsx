@@ -4,7 +4,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
 
-      {/* MENU 1 */}
+     
       <div className="menu">
         <div className="menu-item">
           <span className="icon">
@@ -21,7 +21,7 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* MENU 2 */}
+      
       <div className="menu">
         <div className="menu-item">
           <span className="icon">
@@ -45,7 +45,7 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* SUBSCRIPTIONS */}
+      
       <div className="subscriptions">
         <h4>Subscriptions</h4>
 
