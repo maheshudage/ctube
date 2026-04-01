@@ -7,7 +7,6 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* LEFT */}
       <div className="left">
         <div className="menu">
           <img src="/icons/hamburger.png" alt="menu" />
@@ -21,7 +20,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* SEARCH */}
       <div className="search-box">
         <input type="text" placeholder="Type something..." />
 
@@ -34,7 +32,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* RIGHT */}
       <div className="right">
         <div className="icon">
           <img src="/icons/video-camera.png" alt="video" />
@@ -52,7 +49,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* ✅ DROPDOWN */}
       {showProfile && (
         <div className="profile-dropdown">
 
