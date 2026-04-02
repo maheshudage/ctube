@@ -1,26 +1,21 @@
 import "./Home.css";
+import videos from "../../data/videos";
+import { getRecommendedVideos } from "../../utils/recommendation";
+import VideoCard from "../../components/VideoCard";
+
 
 function Home() {
+
+  const recommendedVideos = getRecommendedVideos(videos);
+
   return (
     <div className="main">
       <div className="grid">
-        {[...Array(6)].map((_, i) => (
-          <div className="card" key={i}>
-            <div className="thumb">
-              <span className="time">7:32</span>
-            </div>
 
-            <div className="card-info">
-              <div className="avatar"></div>
-
-              <div>
-                <h4>Title of the video uploaded by this channel</h4>
-                <p>Channel Name</p>
-                <span>7,343 views • 2 Months ago</span>
-              </div>
-            </div>
-          </div>
+        {recommendedVideos.map((video) => (
+          <VideoCard key={video.id} video={video} />
         ))}
+
       </div>
     </div>
   );
