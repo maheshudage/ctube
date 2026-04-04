@@ -25,22 +25,59 @@
     </div>
 
     <div id="chat-tab" class="tab-content show">
-        <div class="content-body">
-            <div class="msg"><span class="avatar yellow"></span> They are preparing for another stunt I think! 🤔</div>
-            <div class="msg"><span class="avatar pink"></span> Is he going to fall from the top of the plane??? 😱</div>
-            <div class="msg"><span class="avatar grey"></span> This is so funny! 😂</div>
-        </div>
-        <div class="input-area">
-            <input type="text" placeholder="Type your message ...">
-            <button class="send-btn"><img src="../public/icons/send.png"></button>
-        </div>
+    <div class="content-body" id="chat-box">
+        
     </div>
+
+    <div class="input-area">
+        <input type="text" id="chat-input" placeholder="Type your message ...">
+        <button class="send-btn" id="send-btn">
+            <img src="../public/icons/send.png">
+        </button>
+    </div>
+    </div>
+
+
+    <script>
+    const sendBtn = document.getElementById("send-btn");
+    const chatInput = document.getElementById("chat-input");
+    const chatBox = document.getElementById("chat-box");
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+
+        if (message === "") return;
+
+        // Create new message
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("msg");
+
+        msgDiv.innerHTML = `<span class="avatar grey"></span> ${message}`;
+
+        // Add message at TOP
+        chatBox.prepend(msgDiv);
+
+        // Clear input
+        chatInput.value = "";
+    }
+
+    // Click event
+    sendBtn.addEventListener("click", sendMessage);
+
+    // Enter key support
+    chatInput.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    });
+    </script>
+
 
     <div id="video-tab" class="tab-content">
         <div class="content-body">
             <div class="list-item">
                 <div class="card">
-                   <div class="thumb"><span class="time">7:32</span></div>
+                   <div class="thumb"><span class="time"></span></div>
                         <div class="card-info">
                             <div class="avatar"></div>
                         <div>
@@ -54,7 +91,7 @@
             
            <div class="list-item">
                 <div class="card">
-                    <div class="thumb"><span class="time">7:32</span></div>
+                    <div class="thumb"><span class="time"></span></div>
                         <div class="card-info">
                             <div class="avatar"></div>
                         <div>

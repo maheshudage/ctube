@@ -210,3 +210,92 @@ body {
   }
 }
 
+/* --- Content Area Fix --- */
+.content-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+
+  /* NEW: smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* --- Messages --- */
+.msg {
+  color: white;
+  font-size: 14px;
+  margin-top: 10px; /* reduced for better spacing */
+  display: flex;
+  align-items: center;
+  word-break: break-word; /* NEW: prevents overflow */
+}
+
+/* --- Avatar Fix (you had duplicate) --- */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* --- Input Area Improved --- */
+.input-area {
+  background: #ffffff;
+  padding: 0 8px 0 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  max-height: 44px;
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+
+  /* NEW: slight shadow for better UI */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* --- Input Fix --- */
+.input-area input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  background: transparent;
+  color: #000;
+  height: 100%;
+  min-width: 0;
+}
+
+/* --- Send Button Hover Effect --- */
+.send-btn {
+  background: #000000;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 8px;
+
+  transition: transform 0.2s, background 0.2s;
+}
+
+.send-btn:hover {
+  transform: scale(1.1);
+  background: #333;
+}
+
+.send-btn img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+}
