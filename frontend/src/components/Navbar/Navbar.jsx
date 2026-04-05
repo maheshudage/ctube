@@ -1,52 +1,41 @@
+import React from "react";
 import "./Navbar.css";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar">
+    <div className="navbar">
 
-      
-      <div className="left">
-        <div className="menu">
-          <img src="/icons/hamburger.png" alt="menu" />
-        </div>
+      {/* LEFT */}
+      <div className="nav-left">
+        <span className="menu-icon">☰</span>
 
-        <div className="logo">
-          <div className="circle">
-            <img src="/logo/Circle.png" alt="ctube" />
-          </div>
-          <span>C TUBE</span>
+        {/* LOGO */}
+        <img 
+          src="/logo.png"   
+          alt="logo"
+          className="logo-img"
+        />
+
+        <h2 className="logo-text">CTube</h2>
+      </div>
+
+      {/* CENTER */}
+      <div className="nav-center">
+        <input type="text" placeholder="Search" />
+        <button>🔍</button>
+      </div>
+
+      {/* RIGHT */}
+      <div className="nav-right">
+        <div className="icon-group">
+          <span>🎥</span>
+          <span>🔔</span>
+          <span>👤</span>
         </div>
       </div>
 
-   
-      <div className="search-box">
-        <input type="text" placeholder="Type something..." />
-
-        <button className="search-btn">
-          <img src="/icons/search.png" alt="search" />
-        </button>
-
-        <button className="mic-btn">
-          <img src="/icons/microphone-black-shape.png" alt="mic" />
-        </button>
-      </div>
-
-      <div className="right">
-        <div className="icon">
-          <img src="/icons/video-camera.png" alt="video" />
-        </div>
-
-        <div className="icon">
-          <img src="/icons/bell.png" alt="bell" />
-        </div>
-
-        <div className="profile">
-          User<br />Profile
-        </div>
-      </div>
-
-    </nav>
+    </div>
   );
-}
+};
 
 export default Navbar;
