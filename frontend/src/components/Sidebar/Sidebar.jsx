@@ -1,67 +1,33 @@
+import React from "react";
 import "./Sidebar.css";
 
-function Sidebar() {
+const Sidebar = () => {
   return (
     <div className="sidebar">
 
-     
-      <div className="menu">
-        <div className="menu-item">
-          <span className="icon">
-            <img src="/icons/home.png" alt="Home" />
-          </span>
-          <span>Home</span>
+      <div className="sidebar-item">🏠 <span>Home</span></div>
+      <div className="sidebar-item">📺 <span>Subscriptions</span></div>
+      <div className="sidebar-item">🕒 <span>History</span></div>
+      <div className="sidebar-item">⏰ <span>Watch Later</span></div>
+      <div className="sidebar-item">👍 <span>Liked Videos</span></div>
+
+      {/* Divider */}
+      <hr />
+
+      {/* Subscriptions List */}
+      <div className="sidebar-sub">Subscriptions</div>
+
+      {[1,2,3,4,5,6].map((item) => (
+        <div className="sidebar-channel" key={item}>
+          <div className="channel-img"></div>
+          <span>Channel Name</span>
         </div>
+      ))}
 
-        <div className="menu-item">
-          <span className="icon">
-            <img src="/icons/subscriptions.png" alt="Subscriptions" />
-          </span>
-          <span>Subscriptions</span>
-        </div>
-      </div>
-
-      
-      <div className="menu">
-        <div className="menu-item">
-          <span className="icon">
-            <img src="/icons/history.png" alt="History" />
-          </span>
-          <span>History</span>
-        </div>
-
-        <div className="menu-item">
-          <span className="icon">
-            <img src="/icons/clock.png" alt="Watch later" />
-          </span>
-          <span>Watch later</span>
-        </div>
-
-        <div className="menu-item">
-          <span className="icon">
-            <img src="/icons/like.png" alt="Liked videos" />
-          </span>
-          <span>Liked videos</span>
-        </div>
-      </div>
-
-      
-      <div className="subscriptions">
-        <h4>Subscriptions</h4>
-
-        {[...Array(7)].map((_, i) => (
-          <div className="channel" key={i}>
-            <div className="circle"></div> Channel Name
-          </div>
-        ))}
-
-        <div className="show-more">
-          Show More <span>›</span>
-        </div>
-      </div>
+      <div className="show-more">Show More ➤</div>
 
     </div>
   );
-}
+};
 
 export default Sidebar;
