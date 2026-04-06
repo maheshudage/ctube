@@ -51,5 +51,104 @@
 
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // LEFT MENU
+    const menu = document.querySelector(".menu");
+
+    // SEARCH
+    const searchBtn = document.querySelector(".search-btn");
+    const searchInput = document.querySelector(".search-box input");
+
+    // MIC
+    const micBtn = document.querySelector(".mic-btn");
+
+    // RIGHT ICONS
+    const icons = document.querySelectorAll(".right .icon");
+    const videoIcon = icons[0];
+    const bellIcon = icons[1];
+
+    // PROFILE
+    const profile = document.querySelector(".profile");
+
+
+    // MENU CLICK
+    if (menu) {
+        menu.addEventListener("click", function () {
+            alert("Menu clicked ☰");
+        });
+    }
+
+
+    // SEARCH CLICK
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener("click", function () {
+            const value = searchInput.value.trim();
+
+            if (value !== "") {
+                alert("Searching: " + value);
+            } else {
+                alert("Please enter something!");
+            }
+        });
+    }
+
+
+    // MIC (VOICE SEARCH)
+    if (micBtn && searchInput) {
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+
+            micBtn.addEventListener("click", function () {
+                recognition.start();
+            });
+
+            recognition.onresult = function (event) {
+                const text = event.results[0][0].transcript;
+                searchInput.value = text;
+            };
+
+            recognition.onerror = function (event) {
+                alert("Mic error: " + event.error);
+            };
+
+        } else {
+            micBtn.addEventListener("click", function () {
+                alert("Voice not supported in this browser");
+            });
+        }
+    }
+
+
+    // VIDEO ICON
+    if (videoIcon) {
+        videoIcon.addEventListener("click", function () {
+            alert("Video clicked 📹");
+        });
+    }
+
+
+    // BELL ICON
+    if (bellIcon) {
+        bellIcon.addEventListener("click", function () {
+            alert("Notifications 🔔");
+        });
+    }
+
+
+    // PROFILE
+    if (profile) {
+        profile.addEventListener("click", function () {
+            alert("Profile clicked 👤");
+        });
+    }
+
+});
+</script>
+
 </body>
 </html>
