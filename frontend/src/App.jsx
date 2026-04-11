@@ -1,66 +1,47 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Channel from "./Pages/Channel";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-const App = () => {
-// Pages
-// recommendation-system
-import Home from "./Pages/Home/Home";
-import Login from "./Pages/Auth/Login";
-import Signup from "./Pages/Auth/Signup";
-import ForgotPassword from "./Pages/Auth/ForgotPassword";
+import WatchParty from "./components/WatchParty";
+import Profile from "./components/Profile";
+import VideoCard from "./components/VideoCard";
 
-// Layout
-
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
-import Profile from "./pages/Profile/Profile"; 
 
-// main
-function Layout() {
+const isAuth = () => Boolean(localStorage.getItem("token"));
+
+export default function App() {
   return (
-    <div style={{ background: "#000", minHeight: "100vh" }}>
-      <Navbar />
-      <Sidebar />
-      <Channel />  
-    </div>
-  );
-};
-      <div className="main-content">
-// recommendation-system
-        <Home /> {/* Direct render for now */}
-        <Outlet />
-// main
-      </div>
-    </div>
+    <Routes>
+
+      <Route
+        path="/"
+        element={<Navigate to={isAuth() ? "/home" : "/login"} replace />}
+      />
+
+      <Route
+        path="/home"
+        element={isAuth() ? <Home /> : <Navigate to="/login" replace />}
+      />
+
+      <Route
+        path="/login"
+        element={!isAuth() ? <Login /> : <Navigate to="/home" replace />}
+      />
+
+      <Route
+        path="/signup"
+        element={!isAuth() ? <Signup /> : <Navigate to="/home" replace />}
+      />
+
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+
+      <Route path="/watchparty" element={<WatchParty />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/videocard" element={<VideoCard />} />
+
+    </Routes>
   );
 }
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-
-        {/* Default route */}
-        <Route path="/" element={<Layout />} />
-
-        {/* Auth routes */}
-        {/* WITHOUT Navbar */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-
-        {/* WITH Navbar */}
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;

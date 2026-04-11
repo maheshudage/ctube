@@ -1,46 +1,47 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-function Login() {
+import WatchParty from "./components/WatchParty";
+import Profile from "./components/Profile";
+import VideoCard from "./components/VideoCard";
+
+import Home from "./pages/Home";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
+
+const isAuth = () => Boolean(localStorage.getItem("token"));
+
+export default function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-      
-      <div className="bg-[#111] p-8 rounded-xl shadow-lg w-96 border border-gray-800">
-        
-        <h2 className="text-2xl font-semibold text-white text-center mb-6">
-          Login into your account
-        </h2>
+    <Routes>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 mb-4 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+      <Route
+        path="/"
+        element={<Navigate to={isAuth() ? "/home" : "/login"} replace />}
+      />
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 mb-4 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+      <Route
+        path="/home"
+        element={isAuth() ? <Home /> : <Navigate to="/login" replace />}
+      />
 
-        <button className="w-full py-2 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition">
-          Login
-        </button>
+      <Route
+        path="/login"
+        element={!isAuth() ? <Login /> : <Navigate to="/home" replace />}
+      />
 
+      <Route
+        path="/signup"
+        element={!isAuth() ? <Signup /> : <Navigate to="/home" replace />}
+      />
 
-        <p className="text-center text-gray-400 text-sm mt-4">
-      <Link to="/forgot-password" className="hover:underline text-blue-500">
-        Forgot password?
-        </Link>
-        </p>
+      <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        <p className="text-center text-gray-400 text-sm mt-2">
-          Don’t have an account?{" "}
-          <Link to="/signup" className="text-blue-500">Sign Up</Link>
-        </p>
+      <Route path="/watchparty" element={<WatchParty />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/videocard" element={<VideoCard />} />
 
-      </div>
-    </div>
+    </Routes>
   );
 }
-
-export default Login;

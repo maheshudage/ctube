@@ -1,0 +1,214 @@
+/* --- 1. GLOBAL RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+  }
+  
+  /* --- 2. MAIN CONTAINER --- */
+  .main-container {
+    width: 320px;
+    height: 600px;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* --- 3. TABS --- */
+  .tabs {
+    display: flex;
+    padding: 12px;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    height: 42px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tab-btn img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0);
+  }
+  
+  .tab-btn.active {
+    background: #e0e0e0;
+    box-shadow: inset 0 0 0 2px #4dabf7;
+  }
+  
+  /* --- 4. TAB CONTENT --- */
+  .tab-content {
+    display: none;
+    flex-direction: column;
+    height: calc(100% - 66px);
+    padding: 12px;
+  }
+  
+  .tab-content.show {
+    display: flex;
+  }
+  
+  /* --- 5. CONTENT BODY --- */
+  .content-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  /* CHAT ALIGNMENT */
+  .chat-body {
+    justify-content: flex-end;
+  }
+  
+  /* --- 6. CHAT MESSAGES --- */
+  .msg {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  /* COLORS */
+  .yellow { background: #ffe082; }
+  .pink { background: #ff8a80; }
+  .grey { background: #e0e0e0; }
+  .blue { background: #80deea; }
+  
+  /* --- 7. INPUT AREA --- */
+  .input-area {
+    background: #f1f1f1;
+    padding: 0 10px 0 15px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .input-area input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    color: black;
+  }
+  
+  /* SEND BUTTON */
+  .send-btn {
+    background: black;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+  }
+  
+  .send-btn:hover {
+    transform: scale(1.1);
+    background: #333;
+  }
+  
+  /* --- 8. VIDEO SECTION --- */
+  .upnext {
+    background: #2a2a2a;
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .video-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .thumb {
+    width: 90px;
+    height: 55px;
+    background: #ccc;
+    border-radius: 8px;
+  }
+  
+  .video-info h4 {
+    font-size: 13px;
+    color: white;
+  }
+  
+  .video-info p {
+    font-size: 11px;
+    color: #aaa;
+  }
+  
+  .video-info span {
+    font-size: 11px;
+    color: #777;
+  }
+  
+  .remove {
+    margin-left: auto;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* --- 9. PEOPLE TAB --- */
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* --- 10. PLACEHOLDER --- */
+  ::placeholder {
+    color: #888;
+  }
+  
